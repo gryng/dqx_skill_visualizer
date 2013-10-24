@@ -1,0 +1,384 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+    import
+-------------------------------------------------- */
+
+/* compass
+---------------------------------------------- */
+@import "compass";
+@import "compass/reset/";
+
+/* mixin
+---------------------------------------------- */
+@import "_mixin.scss";
+
+/* --------------------------------------------------
+    vars
+-------------------------------------------------- */
+
+/* length
+---------------------------------------------- */
+$contentWidth: 854px;		// コンテンツ幅
+$baseMargin: 25px;			 // ナビゲーション幅
+
+
+/* color
+---------------------------------------------- */
+$baseFontColor: #c9c9ca;		// ベースフォントカラー
+
+$jobColor1: #FF4300;
+$jobColor2: #E80B55;
+$jobColor3: #B512FF;
+$jobColor4: #FFDD0D;
+$jobColor5: #E8920C;
+$jobColor6: #0C16E8;
+$jobColor7: #FF0300;
+$jobColor8: #00B0FF;
+$jobColor9: #0BE899;
+$jobColor10: #20FF12;
+$jobColor11: #FFE700;
+$jobColor12: #FF00A8;
+
+/* animation
+---------------------------------------------- */
+@-webkit-keyframes fadeIn {
+0%   { opacity: 0; }
+65%  { opacity: 0; }
+100%   { opacity: 1; }
+}
+
+
+@-webkit-keyframes rotate {
+0%   { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------
+    base style
+-------------------------------------------------- */
+*{
+	@include box-sizing(border-box);
+}
+
+html{
+  min-height: 100%;
+  height: 100%;
+}
+
+body{
+	font-size: 15px;
+	font-family: 'Open Sans',arial, sans-serif;
+	color: $baseFontColor;
+	background: #fff;
+	line-height: 1.75;
+	text-rendering: optimizelegibility;
+	min-height: 100%;
+	height: 100%;
+	//text-shadow: 0 -1px 0 #000;
+}
+
+a{
+	color: inherit;
+	text-decoration: inherit;
+}
+
+img{
+	@include inline-block;
+}
+
+.hidden{
+	display: none;
+}
+
+@mixin chartItem($color){
+	@include background-image(linear-gradient(adjust-lightness($color, 16), $color));
+	//color: adjust-lightness($color, -25);
+	//color: rgba(0,0,0,0);
+	border: 1px solid adjust-lightness($color, -2);
+	border-top: 1px solid adjust-lightness($color, 10);
+	border-bottom: 1px solid adjust-lightness($color, -6);
+	border-right: none;
+	border-left: none;
+	&:first-child{
+		border-left: 1px solid adjust-lightness($color, 0);
+	}
+	&:last-child{
+		border-right: 1px solid adjust-lightness($color, 0);
+	}
+}
+
+@mixin label($color){
+	@include background-image(linear-gradient(adjust-lightness($color, 16), $color));
+	border: 1px solid adjust-lightness($color, -4);
+}
+
+/* --------------------------------------------------
+    main style
+-------------------------------------------------- */
+#content{
+	display: -webkit-flex;
+}
+
+.listSkill{
+  width: 360px;
+  padding: 20px;
+  position: relative;
+  z-index: 100;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: center;
+  -webkit-align-items: stretch;
+  -webkit-align-content: center;
+  @include background-image(linear-gradient(center left,#767b81, #868b91));
+  box-shadow: 0 2px 4px rgba(0,0,0,.3) inset;
+  
+  
+	>li{
+		-webkit-flex: 1 1 280px;
+		position: relative;
+		z-index: 1;
+		//background: #1f1f21;
+		border-bottom: 1px solid rgba(255,255,255,.25);
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		
+		&.active:after{
+		  content: "";
+		  display: block;
+		  width: 1px;
+		  height: 1px;
+		  position: absolute;
+		  top: 50%;
+		  left: 100%;
+		  margin-top: -6px;
+		  margin-left: 16px;
+		  border-top: 9px solid rgba(0,0,0,0);
+		  border-bottom: 9px solid rgba(0,0,0,0);
+		  border-left: 12px solid #82878d;
+		  border-right: 5px solid rgba(0,0,0,0);
+		  z-index: 10;
+		}
+	}
+	
+	h1{
+		font-size: 16px;
+		line-height: 1;
+		vertical-align: middle;
+		min-width: 100px;
+		margin-bottom: 15px;
+		position: relative;
+		
+		&:after{
+			content: attr(data-sum);
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-weight: bold;
+			color: rgba(0,0,0,.5);
+			text-shadow: 0 1px 0 rgba(255,255,255,.2);
+		}
+	}
+}
+
+.input{
+	vertical-align: middle;
+	padding-top: 5px;
+	
+	span{
+		font-size: 11px;
+	}
+	
+	input[type="number"]{
+		background: transparent;
+		margin-left: 5px;
+		padding: 5px;
+		width: 44px;
+		text-align: center;
+    text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		border: none;
+		color: #fff;
+		font-weight: bold;
+		
+		&:focus{
+			outline: none;
+		}
+	}
+	
+	label{
+		display: inline-block;
+		margin-right: 10px;
+		border-bottom: 1px solid rgba(255,255,255,.15);
+		padding: 0 8px;
+		margin-top: 5px;
+		color: rgba(255,255,255,.75);
+		border-radius: 22px;
+		background: rgba(0,0,0,.05);
+		box-shadow: 0 1px 1px rgba(0,0,0,.15) inset;
+	}
+	
+	span:before{
+		content: "";
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		border-radius: 12px;
+		box-shadow: 0 1px 0 rgba(0,0,0,.35);
+		margin-right: 4px;
+		position: relative;
+		top: -1px;
+		background: #fff;
+		vertical-align: middle;
+	}
+	
+	.job1 span:before{ @include label($jobColor1); }
+	.job2 span:before{ @include label($jobColor2); }
+	.job3 span:before{ @include label($jobColor3); }
+	.job4 span:before{ @include label($jobColor4); }
+	.job5 span:before{ @include label($jobColor5); }
+	.job6 span:before{ @include label($jobColor6); }
+	.job7 span:before{ @include label($jobColor7); }
+	.job8 span:before{ @include label($jobColor8); }
+	.job9 span:before{ @include label($jobColor9); }
+	.job10 span:before{ @include label($jobColor10); }
+	.job11 span:before{ @include label($jobColor11); }
+	.job12 span:before{ @include label($jobColor12); }
+}
+
+.chart.bar{
+	$barHeight: 3px;
+	width: 100%;
+	height: $barHeight;
+	@include display-box;
+	@include background-image(linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.25)));
+	box-shadow: 0 1px 0 rgba(255,255,255,.15), 0 0 1px rgba(0,0,0,.8) inset;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	i{
+		display: block;
+		width: 60px;
+		line-height: $barHeight - 2px;
+		text-align: center;
+		font-size: 10px;
+		color: rgba(255,255,255,0);
+		box-shadow: 0 1px 1px rgba(255,255,255,.2) inset;
+		@include transition-property(all);
+		@include transition-duration(.1s);
+		@include transition-timing-function(ease-in-out);
+		overflow: hidden;
+		
+		&+i{
+			border-left: none;
+		}
+		
+		&[data-val="0"]{
+			border-width: 0 !important;
+		}
+	}
+	
+	.job1{ @include chartItem($jobColor1); }
+	.job2{ @include chartItem($jobColor2); }
+	.job3{ @include chartItem($jobColor3); }
+	.job4{ @include chartItem($jobColor4); }
+	.job5{ @include chartItem($jobColor5); }
+	.job6{ @include chartItem($jobColor6); }
+	.job7{ @include chartItem($jobColor7); }
+	.job8{ @include chartItem($jobColor8); }
+	.job9{ @include chartItem($jobColor9); }
+	.job10{ @include chartItem($jobColor10); }
+	.job11{ @include chartItem($jobColor11); }
+	.job12{ @include chartItem($jobColor12); }
+
+}
+
+.jobDetail{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 360px;
+  z-index: 1;
+  color: #666;
+  text-shadow: none;
+  @include box-sizing(border-box);
+  
+  >section{
+    padding: 25px;
+    padding-right: 360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    @include transition-property(all);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in-out);
+    
+    &.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  
+  h1{
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .skillTable{
+    margin: 0 auto;
+    display: table;
+    
+    li{
+      display: table-row;
+      
+      p{
+        display: table-cell;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+      }
+      
+      .point{
+        text-align: right;
+        color: #999;
+      }
+      
+      .name{
+	      color: #ccc;
+      }
+      
+      &.get{
+      	.point{
+	      	color: #00c900;
+      	}
+      	
+      	.name{
+	      	color: #666;
+      	}
+      }
+    }
+  }
+}
+
+.credit{
+  font-size: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  
+  a{
+    opacity: .45;
+    @include transition-property(all);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in-out);
+    
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

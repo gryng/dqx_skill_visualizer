@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DQ10 スキル管理</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="shortcut icon" href="/favicon.png">
+</head>
+<body>
+
+<!--
+1 戦士
+2 僧侶
+3 魔法使い
+4 武闘家
+5 盗賊
+6 旅芸人
+7 バトルマスター
+8 パラディン
+9 魔法戦士
+10 レンジャー
+11 賢者
+12 スーパースター
+-->
+
+<!--
+1 ゆうかん
+2 しんこう心
+3 まほう
+4 きあい
+5 おたから
+6 きょくげい
+7 とうこん
+8 フォース
+9 サバイバル
+10 はくあい
+11 さとり
+12 オーラ
+13 格闘
+14 盾
+15 片手剣
+16 両手剣
+17 短剣
+18 スティック
+19 両手杖
+20 ヤリ
+21 オノ
+22 ハンマー
+23 棍
+24 ツメ
+25 扇
+26 ムチ
+27 ブーメラン
+28 弓
+-->
+
+<div id="content">
+<ul class="listSkill">
+	<li class="active">
+		<section data-skill="1">
+			<h1>ゆうかん</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job1"><span>戦士</span><input type="number" max="100" min="0" data-job="1" title="戦士" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="2">
+			<h1>しんこう心</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job2"><span>僧侶</span><input type="number" max="100" min="0" data-job="2" title="僧侶" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="3">
+			<h1>まほう</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job3"><span>魔法</span><input type="number" max="100" min="0" data-job="3" title="魔法使い" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="4">
+			<h1>気合い</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job4"><span>武闘</span><input type="number" max="100" min="0" data-job="4" title="武闘家" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="5">
+			<h1>おたから</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job5"><span>盗賊</span><input type="number" max="100" min="0" data-job="5" title="盗賊" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="6">
+			<h1>きょくげい</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job6"><span>旅芸</span><input type="number" max="100" min="0" data-job="6" title="旅芸人" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="7">
+			<h1>とうこん</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job7"><span>バト</span><input type="number" max="100" min="0" data-job="7" title="バトルマスター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="8">
+			<h1>フォース</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job9"><span>魔戦</span><input type="number" max="100" min="0" data-job="9" title="魔法戦士" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="9">
+			<h1>サバイバル</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job10"><span>レン</span><input type="number" max="100" min="0" data-job="10" title="レンジャー" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="10">
+			<h1>はくあい</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job8"><span>パラ</span><input type="number" max="100" min="0" data-job="8" title="パラディン" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="11">
+			<h1>さとり</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job11"><span>賢者</span><input type="number" max="100" min="0" data-job="11" title="賢者" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="12">
+			<h1>オーラ</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job12"><span>スパ</span><input type="number" max="100" min="0" data-job="12" title="スーパースター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="13">
+			<h1>格闘</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job4"><span>武闘</span><input type="number" max="100" min="0" data-job="4" title="武闘家" value="0" /></label><label class="job5"><span>盗賊</span><input type="number" max="100" min="0" data-job="5" title="盗賊" value="0" /></label><label class="job7"><span>バト</span><input type="number" max="100" min="0" data-job="7" title="バトルマスター" value="0" /></label><label class="job10"><span>レン</span><input type="number" max="100" min="0" data-job="10" title="レンジャー" value="0" /></label><label class="job12"><span>スパ</span><input type="number" max="100" min="0" data-job="12" title="スーパースター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="14">
+			<h1>盾</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job1"><span>戦士</span><input type="number" max="100" min="0" data-job="1" title="戦士" value="0" /></label><label class="job2"><span>僧侶</span><input type="number" max="100" min="0" data-job="2" title="僧侶" value="0" /></label><label class="job3"><span>魔法</span><input type="number" max="100" min="0" data-job="3" title="魔法使い" value="0" /></label><label class="job6"><span>旅芸</span><input type="number" max="100" min="0" data-job="6" title="旅芸人" value="0" /></label><label class="job8"><span>パラ</span><input type="number" max="100" min="0" data-job="8" title="パラディン" value="0" /></label><label class="job9"><span>魔戦</span><input type="number" max="100" min="0" data-job="9" title="魔法戦士" value="0" /></label><label class="job11"><span>賢者</span><input type="number" max="100" min="0" data-job="11" title="賢者" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="15">
+			<h1>片手剣</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job1"><span>戦士</span><input type="number" max="100" min="0" data-job="1" title="戦士" value="0" /></label><label class="job7"><span>バト</span><input type="number" max="100" min="0" data-job="7" title="バトルマスター" value="0" /></label><label class="job9"><span>魔戦</span><input type="number" max="100" min="0" data-job="9" title="魔法戦士" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="16">
+			<h1>両手剣</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job1"><span>戦士</span><input type="number" max="100" min="0" data-job="1" title="戦士" value="0" /></label><label class="job7"><span>バト</span><input type="number" max="100" min="0" data-job="7" title="バトルマスター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="17">
+			<h1>短剣</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job3"><span>魔法</span><input type="number" max="100" min="0" data-job="3" title="魔法使い" value="0" /></label><label class="job5"><span>盗賊</span><input type="number" max="100" min="0" data-job="5" title="盗賊" value="0" /></label><label class="job6"><span>旅芸</span><input type="number" max="100" min="0" data-job="6" title="旅芸人" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="18">
+			<h1>スティック</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job2"><span>僧侶</span><input type="number" max="100" min="0" data-job="2" title="僧侶" value="0" /></label><label class="job8"><span>パラ</span><input type="number" max="100" min="0" data-job="8" title="パラディン" value="0" /></label><label class="job12"><span>スパ</span><input type="number" max="100" min="0" data-job="12" title="スーパースター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="19">
+			<h1>両手杖</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job3"><span>魔法</span><input type="number" max="100" min="0" data-job="3" title="魔法使い" value="0" /></label>
+  <label class="job9"><span>魔戦</span><input type="number" max="100" min="0" data-job="9" title="魔法戦士" value="0" /></label><label class="job11"><span>賢者</span><input type="number" max="100" min="0" data-job="11" title="賢者" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="20">
+			<h1>ヤリ</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job2"><span>僧侶</span><input type="number" max="100" min="0" data-job="2" title="僧侶" value="0" /></label><label class="job8"><span>パラ</span><input type="number" max="100" min="0" data-job="8" title="パラディン" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="21">
+			<h1>オノ</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job1"><span>戦士</span><input type="number" max="100" min="0" data-job="1" title="戦士" value="0" /></label><label class="job10"><span>レン</span><input type="number" max="100" min="0" data-job="10" title="レンジャー" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="22">
+			<h1>ハンマー</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job7"><span>バト</span><input type="number" max="100" min="0" data-job="7" title="バトルマスター" value="0" /></label><label class="job8"><span>パラ</span><input type="number" max="100" min="0" data-job="8" title="パラディン" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="23">
+			<h1>棍</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job2"><span>僧侶</span><input type="number" max="100" min="0" data-job="2" title="僧侶" value="0" /></label><label class="job4"><span>武闘</span><input type="number" max="100" min="0" data-job="4" title="武闘家" value="0" /></label><label class="job6"><span>旅芸</span><input type="number" max="100" min="0" data-job="6" title="旅芸人" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="24">
+			<h1>ツメ</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job4"><span>武闘</span><input type="number" max="100" min="0" data-job="4" title="武闘家" value="0" /></label><label class="job5"><span>盗賊</span><input type="number" max="100" min="0" data-job="5" title="盗賊" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="25">
+			<h1>扇</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job4"><span>武闘</span><input type="number" max="100" min="0" data-job="4" title="武闘家" value="0" /></label><label class="job6"><span>旅芸</span><input type="number" max="100" min="0" data-job="6" title="旅芸人" value="0" /></label><label class="job12"><span>スパ</span><input type="number" max="100" min="0" data-job="12" title="スーパースター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="26">
+			<h1>ムチ</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job3"><span>魔法</span><input type="number" max="100" min="0" data-job="3" title="魔法使い" value="0" /></label><label class="job5"><span>盗賊</span><input type="number" max="100" min="0" data-job="5" title="盗賊" value="0" /></label><label class="job12"><span>スパ</span><input type="number" max="100" min="0" data-job="12" title="スーパースター" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="27">
+			<h1>ブーメラン</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job10"><span>レン</span><input type="number" max="100" min="0" data-job="10" title="レンジャー" value="0" /></label><label class="job11"><span>賢者</span><input type="number" max="100" min="0" data-job="11" title="賢者" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+	<li>
+		<section data-skill="28">
+			<h1>弓</h1>
+			<div class="body">
+  			<div class="chart bar"></div>
+  			<div class="input">
+  				<label class="job9"><span>魔戦</span><input type="number" max="100" min="0" data-job="9" title="魔法戦士" value="0" /></label><label class="job10"><span>レン</span><input type="number" max="100" min="0" data-job="10" title="レンジャー" value="0" /></label><label class="job11"><span>賢者</span><input type="number" max="100" min="0" data-job="11" title="賢者" value="0" /></label>
+  			</div>
+			</div>
+		</section>
+	</li>
+</ul>
+<div class="jobDetail">
+  <section data-skill="1" class="active">
+    <h1>ゆうかん</h1>
+    <ul class="skillTable">
+      <li class="get"><p class="point">8</p><p class="name">かばう（専）</p></li>
+      <li><p class="point">16</p><p class="name">常時みのまもり+5</p></li>
+      <li><p class="point">28</p><p class="name">常時ちから+5</p></li>
+      <li><p class="point">40</p><p class="name">ロストアタック</p></li>
+      <li><p class="point">48</p><p class="name">常時みのまもり+5</p></li>
+      <li><p class="point">56</p><p class="name">常時ちから+5</p></li>
+      <li><p class="point">70</p><p class="name">たいあたり（専）</p></li>
+      <li><p class="point">80</p><p class="name">常時さいだいHP+30</p></li>
+      <li><p class="point">90</p><p class="name">常時みのまもり+10</p></li>
+      <li><p class="point">100</p><p class="name">やいばくだき（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="2">
+    <h1>しんこう心</h1>
+    <ul class="skillTable">
+      <li><p class="point">8</p><p class="name">おはらい</p></li>
+      <li><p class="point">16</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">28</p><p class="name">マホトラのころも（専）</p></li>
+      <li><p class="point">40</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">48</p><p class="name">聖女の守り（専）</p></li>
+      <li><p class="point">56</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">70</p><p class="name">天使の守り（専）</p></li>
+      <li><p class="point">80</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">90</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">100</p><p class="name">聖なる祈り（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="3">
+    <h1>まほう</h1>
+    <ul class="skillTable">
+      <li><p class="point">8</p><p class="name">魔結界</p></li>
+      <li><p class="point">18</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">26</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">38</p><p class="name">ぶきみなひかり</p></li>
+      <li><p class="point">46</p><p class="name">呪文ぼうそう率アップ</p></li>
+      <li><p class="point">54</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">68</p><p class="name">魔力の息吹（専）</p></li>
+      <li><p class="point">78</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">88</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">100</p><p class="name">魔力かくせい（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="4">
+    <h1>きあい</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">ためる（専）</p></li>
+      <li><p class="point">12</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">22</p><p class="name">心頭滅却</p></li>
+      <li><p class="point">34</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">48</p><p class="name">不撓不屈（専）</p></li>
+      <li><p class="point">56</p><p class="name">常時ちから+10</p></li>
+      <li><p class="point">70</p><p class="name">おたけび</p></li>
+      <li><p class="point">80</p><p class="name">常時さいだいHP+40</p></li>
+      <li><p class="point">90</p><p class="name">めいそう（専）</p></li>
+      <li><p class="point">100</p><p class="name">ためる弐（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="5">
+    <h1>おたから</h1>
+    <ul class="skillTable">
+      <li><p class="point">8</p><p class="name">ぬすむ（専）</p></li>
+      <li><p class="point">18</p><p class="name">みやぶる</p></li>
+      <li><p class="point">26</p><p class="name">おたからさがし（専）</p></li>
+      <li><p class="point">38</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">46</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">54</p><p class="name">バナナトラップ（専）</p></li>
+      <li><p class="point">68</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">78</p><p class="name">メガボンバー（専）</p></li>
+      <li><p class="point">82</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">100</p><p class="name">しんだふり</p></li>
+    </ul>
+  </section>
+  <section data-skill="6">
+    <h1>きょくげい</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">ボケ</p></li>
+      <li><p class="point">12</p><p class="name">常時みりょく+20</p></li>
+      <li><p class="point">22</p><p class="name">ツッコミ</p></li>
+      <li><p class="point">34</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">46</p><p class="name">タップダンス（専）</p></li>
+      <li><p class="point">54</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">68</p><p class="name">キラージャグリング（専）</p></li>
+      <li><p class="point">78</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">82</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">100</p><p class="name">ハッスルダンス（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="7">
+    <h1>とうこん</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">とうこん討ち（専）</p></li>
+      <li><p class="point">10</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">16</p><p class="name">常時ちから+5</p></li>
+      <li><p class="point">22</p><p class="name">すてみ（専）</p></li>
+      <li><p class="point">32</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">42</p><p class="name">もろばぎり（専）</p></li>
+      <li><p class="point">55</p><p class="name">常時ちから+5</p></li>
+      <li><p class="point">68</p><p class="name">無心こうげき（専）</p></li>
+      <li><p class="point">82</p><p class="name">常時ちから+5</p></li>
+      <li><p class="point">100</p><p class="name">天下無双（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="8">
+    <h1>フォース</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">ファイアフォース（専）</p></li>
+      <li><p class="point">10</p><p class="name">常時ちから+10</p></li>
+      <li><p class="point">16</p><p class="name">アイスフォース（専）</p></li>
+      <li><p class="point">22</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">32</p><p class="name">ストームフォース（専）</p></li>
+      <li><p class="point">42</p><p class="name">常時みのまもり+5</p></li>
+      <li><p class="point">55</p><p class="name">ダークフォース（専）</p></li>
+      <li><p class="point">68</p><p class="name">MPパサー（専）</p></li>
+      <li><p class="point">82</p><p class="name">常時さいだいHP+20</p></li>
+      <li><p class="point">100</p><p class="name">ライトフォース（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="9">
+    <h1>サバイバル</h1>
+    <ul class="skillTable">
+      <li><p class="point">2</p><p class="name">みのがす</p></li>
+      <li><p class="point">12</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">22</p><p class="name">てなづける（専）</p></li>
+      <li><p class="point">34</p><p class="name">常時みりょく+20</p></li>
+      <li><p class="point">46</p><p class="name">メタルトラップ（専）</p></li>
+      <li><p class="point">54</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">68</p><p class="name">まもりのきり（専）</p></li>
+      <li><p class="point">78</p><p class="name">常時かいふく魔力+20</p></li>
+      <li><p class="point">82</p><p class="name">常時きようさ+20</p></li>
+      <li><p class="point">100</p><p class="name">オオカミアタック（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="10">
+    <h1>はくあい</h1>
+    <ul class="skillTable">
+      <li><p class="point">2</p><p class="name">やいばのぼうぎょ</p></li>
+      <li><p class="point">12</p><p class="name">常時みのまもり+10</p></li>
+      <li><p class="point">22</p><p class="name">HPパサー</p></li>
+      <li><p class="point">34</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">46</p><p class="name">におうだち（専）</p></li>
+      <li><p class="point">54</p><p class="name">常時みのまもり+10</p></li>
+      <li><p class="point">68</p><p class="name">ヘヴィチャージ（専）</p></li>
+      <li><p class="point">78</p><p class="name">常時みのまもり+20</p></li>
+      <li><p class="point">82</p><p class="name">常時さいだいHP+30</p></li>
+      <li><p class="point">100</p><p class="name">大ぼうぎょ（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="11">
+    <h1>さとり</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">いやしの雨（専）</p></li>
+      <li><p class="point">10</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">16</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">22</p><p class="name">魔導の書（専）</p></li>
+      <li><p class="point">32</p><p class="name">常時さいだいMP+10</p></li>
+      <li><p class="point">42</p><p class="name">常時かいふく魔力+10</p></li>
+      <li><p class="point">55</p><p class="name">しんぴのさとり（専）</p></li>
+      <li><p class="point">68</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">82</p><p class="name">常時さいだいMP+20</p></li>
+      <li><p class="point">100</p><p class="name">零の洗礼（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="12">
+    <h1>オーラ</h1>
+    <ul class="skillTable">
+      <li><p class="point">4</p><p class="name">サインぜめ（専）</p></li>
+      <li><p class="point">10</p><p class="name">常時みりょく+20</p></li>
+      <li><p class="point">16</p><p class="name">スキャンダル（専）</p></li>
+      <li><p class="point">22</p><p class="name">常時すばやさ+30</p></li>
+      <li><p class="point">32</p><p class="name">メイクアップ（専）</p></li>
+      <li><p class="point">42</p><p class="name">常時こうげき魔力+10</p></li>
+      <li><p class="point">55</p><p class="name">ボディーガード（専）</p></li>
+      <li><p class="point">68</p><p class="name">常時みりょく+60</p></li>
+      <li><p class="point">82</p><p class="name">ベストスマイル（専）</p></li>
+      <li><p class="point">100</p><p class="name">ゴールドシャワー（専）</p></li>
+    </ul>
+  </section>
+  <section data-skill="13">
+    <h1>格闘</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">素手時こうげき力+10</p></li>
+      <li><p class="point">7</p><p class="name">石つぶて</p></li>
+      <li><p class="point">12</p><p class="name">素手時かいしん率+2%</p></li>
+      <li><p class="point">18</p><p class="name">かまいたち</p></li>
+      <li><p class="point">25</p><p class="name">素手時こうげき力+20</p></li>
+      <li><p class="point">30</p><p class="name">せいけん突き</p></li>
+      <li><p class="point">42</p><p class="name">素手時みかわし率+2%</p></li>
+      <li><p class="point">60</p><p class="name">ムーンサルト</p></li>
+      <li><p class="point">77</p><p class="name">素手時こうげき力+40</p></li>
+      <li><p class="point">100</p><p class="name">ばくれつけん</p></li>
+    </ul>
+  </section>
+  <section data-skill="14">
+    <h1>盾</h1>
+    <ul class="skillTable">
+      <li><p class="point">6</p><p class="name">装備時盾ガード率+1%</p></li>
+      <li><p class="point">12</p><p class="name">ぼうぎょ</p></li>
+      <li><p class="point">18</p><p class="name">装備時盾ガード率+1%</p></li>
+      <li><p class="point">25</p><p class="name">ビッグシールド</p></li>
+      <li><p class="point">32</p><p class="name">装備時盾ガード率+1%</p></li>
+      <li><p class="point">40</p><p class="name">シールドアタック</p></li>
+      <li><p class="point">52</p><p class="name">装備時盾ガード率+1%</p></li>
+      <li><p class="point">66</p><p class="name">まもりのたて</p></li>
+      <li><p class="point">82</p><p class="name">装備時しゅび力+30</p></li>
+      <li><p class="point">100</p><p class="name">会心完全ガード</p></li>
+    </ul>
+  </section>
+  <section data-skill="15">
+    <h1>片手剣</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">かえん斬り</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">13</p><p class="name">ドラゴン斬り</p></li>
+      <li><p class="point">22</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">35</p><p class="name">ミラクルソード</p></li>
+      <li><p class="point">42</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">58</p><p class="name">はやぶさ斬り</p></li>
+      <li><p class="point">76</p><p class="name">装備時武器ガード率+4%</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">100</p><p class="name">ギガスラッシュ</p></li>
+    </ul>
+  </section>
+  <section data-skill="16">
+    <h1>両手剣</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">ブレードガード</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">13</p><p class="name">ドラゴンスラッシュ</p></li>
+      <li><p class="point">22</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">35</p><p class="name">ぶんまわし</p></li>
+      <li><p class="point">42</p><p class="name">装備時武器ガード率+4%</p></li>
+      <li><p class="point">58</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">76</p><p class="name">フリーズブレード</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+20</p></li>
+      <li><p class="point">100</p><p class="name">渾身斬り</p></li>
+    </ul>
+  </section>
+  <section data-skill="17">
+    <h1>短剣</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">キラーブーン</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">13</p><p class="name">スリープダガー</p></li>
+      <li><p class="point">22</p><p class="name">攻撃時たまにMP回復</p></li>
+      <li><p class="point">35</p><p class="name">ヒュプノスハント</p></li>
+      <li><p class="point">42</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">58</p><p class="name">ヴァイパーファング</p></li>
+      <li><p class="point">76</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">100</p><p class="name">タナトスハント</p></li>
+    </ul>
+  </section>
+  <section data-skill="18">
+    <h1>スティック</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時MP吸収率+2%</p></li>
+      <li><p class="point">7</p><p class="name">マジステッキ</p></li>
+      <li><p class="point">13</p><p class="name">戦闘勝利時MP小回復</p></li>
+      <li><p class="point">21</p><p class="name">装備時かいふく魔力+30</p></li>
+      <li><p class="point">31</p><p class="name">デビルンチャーム</p></li>
+      <li><p class="point">44</p><p class="name">装備時さいだいMP+30</p></li>
+      <li><p class="point">57</p><p class="name">装備時MP吸収率+2%</p></li>
+      <li><p class="point">70</p><p class="name">パニパニハニー</p></li>
+      <li><p class="point">84</p><p class="name">装備時かいふく魔力+30</p></li>
+      <li><p class="point">100</p><p class="name">キラキラポーン</p></li>
+    </ul>
+  </section>
+  <section data-skill="19">
+    <h1>両手杖</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時MP吸収率+2%</p></li>
+      <li><p class="point">7</p><p class="name">悪魔ばらい</p></li>
+      <li><p class="point">13</p><p class="name">戦闘勝利時MP小回復</p></li>
+      <li><p class="point">21</p><p class="name">早詠みの杖</p></li>
+      <li><p class="point">31</p><p class="name">装備時こうげき魔力+30</p></li>
+      <li><p class="point">44</p><p class="name">しゅくふくの杖</p></li>
+      <li><p class="point">57</p><p class="name">装備時こうげき魔力+30</p></li>
+      <li><p class="point">70</p><p class="name">暴走魔法陣</p></li>
+      <li><p class="point">84</p><p class="name">装備時さいだいMP+100</p></li>
+      <li><p class="point">100</p><p class="name">戦闘勝利時MP中回復</p></li>
+    </ul>
+  </section>
+  <section data-skill="20">
+    <h1>ヤリ</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">7</p><p class="name">けもの突き</p></li>
+      <li><p class="point">13</p><p class="name">装備時武器ガード率+3%</p></li>
+      <li><p class="point">22</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">35</p><p class="name">雷鳴突き</p></li>
+      <li><p class="point">42</p><p class="name">装備時武器ガード率+3%</p></li>
+      <li><p class="point">58</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">76</p><p class="name">一閃突き</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+20</p></li>
+      <li><p class="point">100</p><p class="name">狼牙突き</p></li>
+    </ul>
+  </section>
+  <section data-skill="21">
+    <h1>オノ</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">7</p><p class="name">たいぼく斬</p></li>
+      <li><p class="point">13</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">22</p><p class="name">蒼天魔斬</p></li>
+      <li><p class="point">35</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">42</p><p class="name">かぶと割り</p></li>
+      <li><p class="point">58</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">76</p><p class="name">まじん斬り</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+20</p></li>
+      <li><p class="point">100</p><p class="name">オノむそう</p></li>
+    </ul>
+  </section>
+  <section data-skill="22">
+    <h1>ハンマー</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">ウェイトブレイク</p></li>
+      <li><p class="point">7</p><p class="name">ドラムクラッシュ</p></li>
+      <li><p class="point">13</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">22</p><p class="name">シールドブレイク</p></li>
+      <li><p class="point">35</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">42</p><p class="name">MPブレイク</p></li>
+      <li><p class="point">58</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">76</p><p class="name">キャンセルショット</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">100</p><p class="name">ランドインパクト</p></li>
+    </ul>
+  </section>
+  <section data-skill="23">
+    <h1>棍</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">7</p><p class="name">足ばらい</p></li>
+      <li><p class="point">13</p><p class="name">装備時武器ガード率+4%</p></li>
+      <li><p class="point">22</p><p class="name">黄泉送り</p></li>
+      <li><p class="point">35</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">42</p><p class="name">なぎはらい</p></li>
+      <li><p class="point">58</p><p class="name">装備時みかわし率+4%</p></li>
+      <li><p class="point">76</p><p class="name">氷結らんげき</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+20</p></li>
+      <li><p class="point">100</p><p class="name">天地のかまえ</p></li>
+    </ul>
+  </section>
+  <section data-skill="24">
+    <h1>ツメ</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">ウィングブロウ</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">13</p><p class="name">裂鋼拳</p></li>
+      <li><p class="point">22</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">35</p><p class="name">必中拳</p></li>
+      <li><p class="point">42</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">58</p><p class="name">タイガークロー</p></li>
+      <li><p class="point">76</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">100</p><p class="name">ゴールドフィンガー</p></li>
+    </ul>
+  </section>
+  <section data-skill="25">
+    <h1>扇</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">7</p><p class="name">花ふぶき</p></li>
+      <li><p class="point">13</p><p class="name">装備時かいしん率+2%</p></li>
+      <li><p class="point">22</p><p class="name">明鏡止水</p></li>
+      <li><p class="point">35</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">42</p><p class="name">波紋演舞</p></li>
+      <li><p class="point">58</p><p class="name">装備時みとれる+5%</p></li>
+      <li><p class="point">76</p><p class="name">おうぎのまい</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">100</p><p class="name">アゲハ乱舞</p></li>
+    </ul>
+  </section>
+  <section data-skill="26">
+    <h1>ムチ</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">らせん打ち</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">13</p><p class="name">愛のムチ</p></li>
+      <li><p class="point">22</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">35</p><p class="name">スパークショット</p></li>
+      <li><p class="point">42</p><p class="name">しばり打ち</p></li>
+      <li><p class="point">58</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">76</p><p class="name">地ばしり打ち</p></li>
+      <li><p class="point">88</p><p class="name">装備時効果範囲+2m</p></li>
+      <li><p class="point">100</p><p class="name">双竜打ち</p></li>
+    </ul>
+  </section>
+  <section data-skill="27">
+    <h1>ブーメラン</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">スライムブロウ</p></li>
+      <li><p class="point">7</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">13</p><p class="name">メタルウィング</p></li>
+      <li><p class="point">22</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">35</p><p class="name">パワフルスロー</p></li>
+      <li><p class="point">42</p><p class="name">装備時命中+20%</p></li>
+      <li><p class="point">58</p><p class="name">シャインスコール</p></li>
+      <li><p class="point">76</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">88</p><p class="name">バーニングバード</p></li>
+      <li><p class="point">100</p><p class="name">デュアルカッター</p></li>
+    </ul>
+  </section>
+  <section data-skill="28">
+    <h1>弓</h1>
+    <ul class="skillTable">
+      <li><p class="point">3</p><p class="name">装備時こうげき力+5</p></li>
+      <li><p class="point">7</p><p class="name">マジックアロー</p></li>
+      <li><p class="point">13</p><p class="name">装備時射程距離+2m</p></li>
+      <li><p class="point">22</p><p class="name">バードシュート</p></li>
+      <li><p class="point">35</p><p class="name">装備時こうげき力+10</p></li>
+      <li><p class="point">42</p><p class="name">サンダーボルト</p></li>
+      <li><p class="point">58</p><p class="name">装備時射程距離+2m</p></li>
+      <li><p class="point">76</p><p class="name">さみだれうち</p></li>
+      <li><p class="point">88</p><p class="name">装備時こうげき力+15</p></li>
+      <li><p class="point">100</p><p class="name">天使の矢</p></li>
+    </ul>
+  </section>
+  <p class="credit"><small><a href="http://gryng.me">gryng.me</a></small></p>
+</div>
+<!-- /#content --></div>
+
+			
+<!-- Scripts [[[ -->
+<script src="js/jquery-2.0.0.min.js"></script>
+<script src="js/main.js"></script>
+<!-- ]]] Scripts -->
+
+</body>
+</html>

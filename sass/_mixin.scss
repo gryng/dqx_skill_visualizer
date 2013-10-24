@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+    mixin
+-------------------------------------------------- */
+
+/* clearfix
+---------------------------------------------- */
+%clearfix {
+	*zoom: 1;
+	overflow: visible;
+	
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+/* text-overflow-ellipsis
+---------------------------------------------- */
+%text-overflow-ellipsis {
+	display: block;
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* user-select-none
+---------------------------------------------- */
+%user-select-none {
+	cursor: default;
+	user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+/* pointer event none
+---------------------------------------------- */
+%pointer-events-none {
+	pointer-events: none;
+	-o-pointer-events: none;
+	-ms-pointer-events: none;
+	-moz-pointer-events: none;
+	-webkit-pointer-events: none;
+}
+
+/* pointer event auto
+---------------------------------------------- */
+%pointer-events-auto {
+	pointer-events: auto;
+	-o-pointer-events: auto;
+	-ms-pointer-events: auto;
+	-moz-pointer-events: auto;
+	-webkit-pointer-events: auto;
+}

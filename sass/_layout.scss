@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+	layout
+-------------------------------------------------- */
+
+#mainView{
+  @include display-box;
+  @include box-align(center);
+  @include box-sizing(border-box);
+  min-height: 100%;
+  width: $contentWidth;
+  margin: 0 auto;
+}
